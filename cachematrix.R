@@ -2,7 +2,12 @@
 ## functions do
 
 ## Write a short comment describing this function
-
+# Function take a matrix x as input
+# matrix x is stored internally 
+# set function : replaces the currnet matrix with a new one : parameter y
+# get function : returns the current matrix
+# setInvert : takes the input matrix y and stores it in variable invertedData. Functions assumes the input is the inverted matrix.
+# getInvert : returns the inverted matrix
 makeCacheMatrix <- function(x = matrix()) {
   # function takes a matrix as input
   invertedData <- NULL                        # holds the inverted data
@@ -24,9 +29,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
-
+# function takes matrix x as input
+# intially the code asks the makeCacheMatrix for the inverted matrix
+# if makeCacheMatrix already has a copy of the inverted matrix it is returned and the function exits
+# other wise, the inversion is computed and setInvert is called to store it
+# function returns the inverted matrix
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  ## Return a matrix that is the inverse of 'x'
   # assumes x is of type 'makeCacheMatrix'
   invertedData <- x$getInvert()                                # gets the inverted matrix from the input variable x
   if(!is.null(invertedData)) {                                 # Check to see if the invert has been computed already
